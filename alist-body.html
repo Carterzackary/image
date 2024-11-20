@@ -1,0 +1,42 @@
+<!--一言API-->
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+
+<!--不蒜子计数器-->
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--延迟加载-->
+<div id="customize" style="display: none;">
+    <div>
+        <center class="dibu">
+            <div>
+                <!-- 显示 访问 -->
+                <span>
+                    <span id="busuanzi_container_site_pv" style="font-size: 14px; font-weight: bold;">
+                        总访问量 <span id="busuanzi_value_site_pv" style="color: rgb(255, 0, 0); --darkreader-inline-color: #ff2626;"></span> 次,   
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        总访客数 <span id="busuanzi_value_site_uv" style="color: rgb(255, 0, 0); --darkreader-inline-color: #ff2626;"></span> 人
+                    </span>
+                </span>
+
+                <!-- 显示 一言 -->
+                <p style="text-align: center; font-size: 15px; font-weight: bold;">
+                    <span id="hitokoto" style="color: rgb(0, 217, 255); --darkreader-inline-color: #00d9ff;">
+                        <a href="#" id="hitokoto_text"></a>
+                    </span>
+                </p>
+            </div>
+        </center>
+    </div>
+    <!--延迟加载范围到这里结束-->
+</div>
+
+<!--延迟加载配套使用JS-->
+<script>
+    let interval = setInterval(() => {
+        if (document.querySelector(".footer")) {
+            document.querySelector("#customize").style.display = "";
+            clearInterval(interval);
+        }
+    }, 200);
+</script>
